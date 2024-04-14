@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainers existentes</title>
+</head>
+
+<body>
+    <h1>Lista de trainers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Contacto</th>
+                <th>Grupo</th>
+                <th>Área de entrenamiento</th>
+                <th>Horario</th>
+            </tr>
+        </thead>
+        <tbody id="trainersList"></tbody>
+    </table>
+
+    <script>
+
+        let trainers = JSON.parse(localStorage.getItem('trainers')) || [];
+
+        // Obtener el elemento tbody donde se mostrarán los trainers
+        let trainersList = document.getElementById('trainersList');
+
+        // Iterar sobre la lista de trainers y agregar cada uno a la tabla
+        trainers.forEach(trainer => {
+            let row = document.createElement('tr');
+            row.innerHTML = `<td>${trainer.id}</td><td>${trainer.Nombres}</td><td>${trainer.Apellidos}</td><td>${trainer.Contacto}</td><td>${trainer.Horario.Grupo}</td><td>${trainer.Horario.Area_Entrenamiento}</td><td>${trainer.Horario.Time}</td>`;
+            trainersList.appendChild(row);
+        });
+
+        console.log(trainers);
+    </script>
+
+</body>
+
+</html>
