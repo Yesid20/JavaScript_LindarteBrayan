@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routes existentes</title>
+</head>
+
+<body>
+    <h1>Lista de routes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>concepto</th>
+                <th>concepto_2</th>
+                <th>concepto_3</th>
+            </tr>
+        </thead>
+        <tbody id="routesList"></tbody>
+    </table>
+
+    <script>
+
+        let routes = JSON.parse(localStorage.getItem('routes')) || [];
+
+        // Obtener el elemento tbody donde se mostrarán las routes
+        let routesList = document.getElementById('routesList');
+
+        // Iterar sobre la lista de routes y agregar cada uno a la tabla
+        routes.forEach(route => {
+            let row = document.createElement('tr');
+            row.innerHTML = `<td>${route.id}</td><td>${route.Titulo}</td><td>${route.concepto}</td><td>${route.concepto_2}</td><td>${route.concepto_3}</td>`;
+            routesList.appendChild(row);
+        });
+        
+        console.log(routes);
+    </script>
+
+</body>
+
+</html>
