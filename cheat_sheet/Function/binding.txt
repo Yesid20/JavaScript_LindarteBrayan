@@ -1,0 +1,75 @@
+Binding es como el "this" se asocia o se vincula a una función.
+
+Ejemplos de Binding
+
+Implicit Binding
+Cuando se invoca un método de un objeto y this se vincula al objeto que CONTIENE el método.
+
+const person = {
+    name: 'Adam',
+    greet: function() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
+};
+
+person.greet(); // Output: Hello, I'm Adam. 
+
+
+----------------------
+
+Explicit Binding 
+
+Se usan métodos como call, apply o bind 
+
+function greet() {
+    console.log(`Hello, I'm ${this.name}`)
+    
+}
+
+const adam = { name: 'Adam };
+
+greet.call(adam); // Output: Hello, I'm Adam.
+-----------------------
+
+New Binding
+Función invoca palabra clave "new" instanciando un nuevo objeto y vinculando this
+a este objeto. 
+
+function Person(name) {
+    this.name  = name;
+}
+
+const adam = new Person('Adam');
+console.log(adam.name); // Output: Adam</
+
+--------------------------------
+
+Lexical Binding
+
+Se utiliza this en una función dentro de otra funcion.
+
+
+ const person = {
+    name: 'Adam',
+    greet: function () {
+        const innerFunction = () => {
+            console.log(`Hi, my name is $ {this.name}`);
+        };
+        innerFunction();
+    }
+};
+
+person.greet();
+
+-----------------------------------
+
+Window Binding
+
+This se vincula al objeto global(Como en el navegador (console))
+
+ function showName() {
+    console.log(this.name);
+ }
+
+ window.name = 'Adam';
+ showName();

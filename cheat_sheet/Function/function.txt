@@ -1,0 +1,76 @@
+Funciones Declarativas (con nombre)
+
+function suma(a, b) { return a + b ;}
+
+////////////
+
+Funciones Expresivas (o anónimas)
+
+const suma = function (a, b) { return a + b;};
+
+//////////
+
+Funciones Flecha 
+
+ES6 -> Sintaxis más concisa.
+Comportamiento ligeramente diferente con respecto a this. 
+
+const suma = (a, b) => a + b;
+
+///////////////
+
+Funciones constructoras
+
+Instanciar objetos con new.
+This asignan propiedades al nuevo objeto.
+
+function Persona(nombre, edad){ this.nombre = nombre; this.edad = edad; } const
+persona1 = new Persona('Juan', 25);
+
+//////////////////
+
+Funciones de orden superior (Higher-Order Functions):
+Aceptan funciones como argumentos o devuelven funciones.
+Entre estos incluye map, filter, reduce.
+
+//////////////////
+
+Funciones Recursivas
+Llamadas asi misma durante la ejecución.
+
+function factorial(n) {if (n === 0 || n === 1) {return 1; } else {return n * 
+factorial(n - 1);}} 
+
+///////////////////
+Funciones Anidadas(Nested Functions):
+Definidas dentro de otra función.
+Pueden heredar entre si  el scope del padre.
+function exterior() { let variableExterior = 'Exterior'; function interior(){
+    console.log(variableExterior); } interior();} exterior();
+
+////////////////////
+Métodos de objeto 
+Funciones que son propiedades de objetos.
+
+const objeto = { metodo: function() { console.log('Hi, from method' ); }};
+objeto.method();
+
+
+/////////////////
+
+Funciones Asincrónicas 
+
+Utilizadas para callbacks, Promesas o Async/Await.
+
+async function fetchData() { const response = await
+fetch('<https://api.example.com/data>'); const data = await response.json();
+console.log(data);}
+
+///////////////////
+Funciones Puras 
+
+Dado el mismo conjunto de entradas, siempre producirán el mismo resultado sin causar efectos secundarios
+Observables. 
+No dependen de ni modifican estados externos.
+
+function suma (a, b) {return a + b; }
