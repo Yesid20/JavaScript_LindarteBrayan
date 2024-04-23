@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <!-- Enlace al archivo CSS -->
+    <link href="/Day 7/style/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Información de Héroe</h1>
+        <div class="row mt-3">
+            <div class="col-6">
+                <label for="heroId" class="form-label">Ingresa el número del héroe que quieres consultar:</label>
+                <input type="number" id="heroId" value="70" min="1" max="731" class="form-control"></input>
+                <button onclick="fetchSuperHero()" class="btn btn-primary mt-2">Obtener mi héroe</button>
+            </div>
+        </div>
+        <div id="superHeroInfo" class="mt-5">
+            <!-- Aquí se mostrará la información del héroe -->
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
