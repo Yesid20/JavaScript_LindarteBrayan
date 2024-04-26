@@ -19,6 +19,10 @@ function fetchStarWars() {
                     <th scope="col">Films</th>
                     <th scope="col">Species</th>
                     <th scope="col">Vehicles</th>
+                    <th scope="col">Starships</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">Edited</th>
+                    <th scope="col">Url</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +38,10 @@ function fetchStarWars() {
                     <td id="filmsInfo"></td>
                     <td id="speciesInfo"></td>
                     <td id="vehiclesInfo"></td>
+                    <td id="starshipsInfo"></td>
+                    <td>${data.created}</td>
+                    <td>${data.edited}</td>
+                    <td>${data.url}</td>
                 </tr>
             </tbody>
         </table>`;
@@ -126,6 +134,40 @@ function fetchStarWars() {
                 .catch(error => {
                     console.error('Error fetching  vehicle:', error);
                 });
+
+            // Realiza una solicitud a starships
+            fetch(data.starships[0])
+                .then(response => response.json())
+                .then(starshipData => {
+                    const starshipsInfo = document.getElementById('starshipsInfo');
+                    // Construye la informaciòn de los starships
+                    const starshipInfo = `
+                <p>Name:${starshipData.name}</p>
+                <p>Model:${starshipData.model}</p>
+                <p>Manufacturer:${starshipData.manufacturer}</p>
+                <p>Cost_in_credits:${starshipData.cost_in_credits}</p>
+                <p>Length:${starshipData.length}</p>
+                <p>Max_Atmosphering_Speed: ${starshipData.max_atmosphering_speed}</p>
+                <p>Crew: ${starshipData.crew}</p>
+                <p>Passengers: ${starshipData.passengers}</p>
+                <p>Cargo_capacity: ${starshipData.cargo_capacity}</p>
+                <p>Consumables: ${starshipData.consumables}</p>
+                <p>Hyperdrive_rating: ${starshipData.hyperdrive_rating}</p>
+                <p>Mglt: ${starshipData.MGLT}</p>
+                <p>Starship_class: ${starshipData.starship_class}</p> 
+            `;
+                    // Agrega la informacion de star
+                    starshipsInfo.innerHTML = starshipInfo;
+                })
+                .catch(error => {
+                    console.error('Error fetching  starships:', error);
+                });
+
+
+
+
+
+
         })
 
 }
