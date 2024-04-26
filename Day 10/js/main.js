@@ -62,27 +62,6 @@ function fetchStarWars() {
                 .catch(error => {
                     console.error('Error al obtener datos del planeta:', error);
                 });
-            // Realiza una solicitud a las movies 
-            fetch(data.films[0])
-                .then(response => response.json())
-                .then(filmData => {
-                    const filmsInfo = document.getElementById('filmsInfo');
-                    // Construye la informaciòn de las movies
-                    const filmInfo = `
-                        <p>Title:${filmData.title}</p>
-                        <p>Episode:${filmData.episode_id}</p>
-                        <p>Director:${filmData.director}</p>
-                        <p>Producer:${filmData.producer}</p>
-                        <p>Release Date:${filmData.release_date}</p>
-                    `;
-                    // Agrega la informacion del planeta al div movies
-                    filmsInfo.innerHTML = filmInfo;
-                })
-                .catch(error => {
-                    console.error('Error fetching  film:', error);
-                });
-
-            // Realiza una solicitud a las species 
             // Obtener información de todas las películas
             Promise.all(data.films.map(filmUrl => fetch(filmUrl).then(response => response.json())))
                 .then(films => {
@@ -99,12 +78,40 @@ function fetchStarWars() {
                     console.error('Error al obtener datos de las películas:', error);
                 });
 
-            // Realiza una solicitud a las movies 
+            // Realiza una solicitud a las species 
+            fetch(data.species[0])
+                .then(response => response.json())
+                .then(specieData => {
+                    const speciesInfo = document.getElementById('speciesInfo');
+                    // Construye la informaciòn de los vehicles
+                    const specieInfo = `
+                <p>Name:${specieData.name}</p>
+                <p>Classification:${specieData.classification}</p>
+                <p>Designation:${specieData.designation}</p>
+                <p>Average_height:${specieData.average_height}</p>
+                <p>Skin_color:${specieData.skin_colors}</p>
+                <p>Hair_color:${specieData.hair_colors}</p>
+                <p>Eye_color:${specieData.eye_colors}</p>
+                <p>Average_lifespan:${specieData.average_lifespan}</p>
+                <p>Homeworld:${specieData.homeworld}</p>
+                <p>Language:${specieData.language}</p>
+
+            `;
+                    // Agrega la informacion del planeta al div movies
+                    console.log(specieInfo);
+                    speciesInfo.innerHTML = specieInfo;
+                })
+                .catch(error => {
+                    console.error('Error fetching  specieInfo:', error);
+                });
+
+
+            // Realiza una solicitud a vehicles
             fetch(data.vehicles[0])
                 .then(response => response.json())
                 .then(vehicleData => {
                     const vehiclesInfo = document.getElementById('vehiclesInfo');
-                    // Construye la informaciòn de las movies
+                    // Construye la informaciòn de los vehicles
                     const vehicleInfo = `
                     <p>Name:${vehicleData.name}</p>
                     <p>Model:${vehicleData.model}</p>
