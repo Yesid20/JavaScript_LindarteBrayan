@@ -105,8 +105,7 @@ function fetchStarWars() {
                 <p>Language:${specieData.language}</p>
 
             `;
-                    // Agrega la informacion del planeta al div movies
-                    console.log(specieInfo);
+                    // Agrega la informacion de species
                     speciesInfo.innerHTML = specieInfo;
                 })
                 .catch(error => {
@@ -127,8 +126,7 @@ function fetchStarWars() {
                     <p>Cost_in_credits:${vehicleData.cost_in_credits}</p>
                     <p>Length:${vehicleData.length}</p>
                 `;
-                    // Agrega la informacion del planeta al div movies
-                    console.log(vehicleInfo);
+                    // Agrega la informacion de vehicle
                     vehiclesInfo.innerHTML = vehicleInfo;
                 })
                 .catch(error => {
@@ -156,7 +154,7 @@ function fetchStarWars() {
                 <p>Mglt: ${starshipData.MGLT}</p>
                 <p>Starship_class: ${starshipData.starship_class}</p> 
             `;
-                    // Agrega la informacion de star
+                    // Agrega la informacion de starships
                     starshipsInfo.innerHTML = starshipInfo;
                 })
                 .catch(error => {
