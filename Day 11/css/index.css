@@ -26,3 +26,71 @@ body, html {
     height: 1.6vi;
     box-shadow: -3px 4px 0 #888, -5px 7px 0 #333
 }
+
+.pok_Img {
+  position: absolute;
+  bottom: 55%;
+  left: 50%;
+  transform: translate(-63%, 20%);
+  height: 18%;
+}
+
+.pok_Data {
+  position: absolute;
+  font-weight: 600;
+  color: #aaa;
+  top: 27vi;
+  right: 44vi;
+  font-size: clamp(8px, 5vw, 25px);
+}
+
+.pok_Name {
+  color: #3a444d;
+  text-transform: capitalize;
+}
+
+.forms {
+  position: absolute;
+    width: 65%;
+    top: 32vi;
+    left: 41.7vi;
+}
+
+.find {
+    width: 15vi;
+    padding: 1vi;
+    outline: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #3a444d;
+    font-size: clamp(8px, 5vw, 1rem);
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 10vi;
+  left: 5vi;
+  width: 10vi;
+  transform: translate(40vi, -2vi);
+  gap: 20px;
+  display: flex;
+}
+
+.button {
+  width: 50%;
+  padding: 4%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 1rem);
+  font-weight: 600;
+  color: white;
+  background-color: #444;
+  box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+}
+
+.button:active {
+  box-shadow: inset -4px 4px 0 #222;
+  font-size: 0.9rem;
+}

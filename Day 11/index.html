@@ -11,24 +11,27 @@
 
 <body>
 
-    <div class="imagePrin">
-        <img src="./storage/img/pokedex (1).png">
-    </div>
-    
-    <div class="search-container">
-        <form id="search-form">
-            <input type="text" id="search-input" placeholder="Name or Number...">
+    <main>
+        <img src="#" alt="pok" class="pok_Img">
+
+        <h1 class="pok_Data">
+            <span class="pok_Num"></span>
+            <span class="pok_Name"></span>
+        </h1>
+        <div class="imagePrin">
+            <img src="./storage/img/pokedex (1).png">
+        </div>
+
+        <form class="forms">
+            <input type="search" class="find" placeholder="Name or Number" required />
         </form>
-    </div>
-    <div class="search-prev">
-        <form id="search-form">
-            <input type="text" id="search-input" placeholder="Prev">
-        </form>
-    </div>
-    <div class="search-next">
-        <form id="search-form">
-            <input type="text" id="search-input" placeholder="Next">
-        </form>
-    </div>
+
+        <div class="buttons">
+            <button class="button b_Prev">Prev &lt;</button>
+            <button class="button b_Next">Next &gt;</button>
+        </div>
+    </main>
 </body>
+<script src="js/main.js"></script>
+
 </html>
