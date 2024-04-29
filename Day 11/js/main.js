@@ -2,7 +2,7 @@
 const find = document.querySelector('.find');
 const pok_Num = document.querySelector('.pok_Num');
 const pok_Name = document.querySelector('.pok_Name');
-const forms = document.querySelector( '.forms' );
+const forms = document.querySelector('.forms');
 const b_Prev = document.querySelector('.b_Prev');
 const b_Next = document.querySelector('.b_Next');
 const pok_Img = document.querySelector('.pok_Img');
@@ -20,29 +20,37 @@ const getPokemon = async (pok) => {
     pok_Num.innerText = '';
 
     pok > 649
-    ? (() => {
-        pok_Img.style.display = 'none';
-        pok_Name.innerText = 'Ese Pokémon esta fuera de su nivel, por ende no se puede mostrar';
-        return;
-    })()
-    : null;
+        ? (() => {
+            pok_Img.style.display = 'none';
+            pok_Name.innerText = 'Ese Pokémon esta fuera de su nivel, por ende no se puede mostrar';
+            return;
+        })()
+        : null;
 
     let data;
     try {
         data = await fetchPokemonInfo(pok);
-    } catch (error){
+    } catch (error) {
         console.error('Error fetching pok', error);
         pok_Img.style.display = 'none';
         pok_Name.innerText = 'Error al consultar el Pokémon';
         return;
     }
 
-    if(data){
+    if (data) {
         pok_Img.style.display = 'block';
         pok_Name.innerText = data.name;
         pok_Num.innerText = data.id;
-        pok_Img.src = data.sprites.front_default;
-        find.value= '';
+
+        // Verifica si existe una URL de GIF animado en las versiones de sprites de generación V
+        pok_Img.src = data.sprites.versions['generation-v'] &&
+            data.sprites.versions['generation-v']['black-white'] &&
+            data.sprites.versions['generation-v']['black-white']['animated'] &&
+            data.sprites.versions['generation-v']['black-white']['animated']['front_shiny'] ?
+            data.sprites.versions['generation-v']['black-white']['animated']['front_shiny'] :
+            data.sprites.versions['generation-v']['black-white']['front_shiny'] 
+            ; // Utiliza la URL de GIF animado si existe, de lo contrario, utiliza una URL de imagen estática por defecto
+        find.value = '';
         init_Pok = data.id;
     } else {
         pok_Img.style.display = 'none';
@@ -58,11 +66,11 @@ forms.addEventListener('submit', (event) => {
 let waiting = false;
 
 const handleButtonClick = (increment) => {
-    if(!waiting) {
+    if (!waiting) {
         const newSearchPokemon = init_Pok + increment;
-        if(newSearchPokemon >= 1 && newSearchPokemon <= 649) {
+        if (newSearchPokemon >= 1 && newSearchPokemon <= 649) {
             init_Pok = newSearchPokemon;
-            getPokemon(init_Pok);   
+            getPokemon(init_Pok);
             waiting = true;
             setTimeout(() => {
                 waiting = false;
@@ -75,7 +83,7 @@ b_Prev.addEventListener('click', () => {
     handleButtonClick(-1);
 });
 
-b_Next.addEventListener( 'click' ,() =>{
+b_Next.addEventListener('click', () => {
     handleButtonClick(1);
 });
 

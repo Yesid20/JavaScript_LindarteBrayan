@@ -10,7 +10,7 @@ body, html {
   /* Estilos CSS para el contenedor del cuadro de búsqueda */
   .search-container {
     text-align: center; 
-    margin-top: 15vi; 
+    margin-top: 10vi; 
     margin-left: -20.5vi;
 }
 
@@ -29,17 +29,17 @@ body, html {
 
 .pok_Img {
   position: absolute;
-  bottom: 55%;
-  left: 50%;
+  bottom: 26vi;
+  left: 50vi;
   transform: translate(-63%, 20%);
-  height: 18%;
+  height: 7vi;
 }
 
 .pok_Data {
   position: absolute;
   font-weight: 600;
   color: #aaa;
-  top: 27vi;
+  top: 26vi;
   right: 44vi;
   font-size: clamp(8px, 5vw, 25px);
 }
@@ -52,7 +52,7 @@ body, html {
 .forms {
   position: absolute;
     width: 65%;
-    top: 32vi;
+    top: 31vi;
     left: 41.7vi;
 }
 
