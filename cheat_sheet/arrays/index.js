@@ -212,7 +212,7 @@ sumita.forEach(number => {
 })
 
 console.log('Array of Numbers:', sumita);
-console.log('Sum of numbers: ', add); */
+console.log('Sum of numbers: ', add); 
 
 //filter () ayuda a generar un nuevo array con los items que cumplan una condición
 
@@ -369,4 +369,111 @@ transactions.forEach(transaction => {
         transaction.description = `Income: ${transaction.description}`
     }
 })
-console.log('Updated transactions: ', transactions)
+console.log('Updated transactions: ', transactions) 
+
+
+//slice () toma un fragmento del arreglo, se debe pasar
+// desde que posicion Inicia y Finaliza = slice (I, F)
+// Si se pasa 1 solo nùmero desde esa posicion hasta el final del array
+// Recuerda que la posicion final debe ser -1;
+// Metodo no modifica el array original
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(2))
+console.log(animals.slice(2, 4));
+
+// Copying an Array 
+
+const originalArray = [1, 2, 3, 4, 5]
+const copyOfArray = [...originalArray];
+
+console.log(originalArray)
+console.log(copyOfArray);
+
+
+// Combining Arrays 
+
+const array1 = [1, 2, 3]
+const array2 = [4, 5, 6]
+const combinedArray = [...array1, ...array2]
+
+console.log(array1)
+console.log(array2);
+console.log(combinedArray);
+
+// Creating arrays with additional elements 
+
+const baseArray = [1, 2, 3]
+const arrayWithAdditionalElements = [...baseArray, 4, 5, 6];
+
+console.log(baseArray);
+console.log(arrayWithAdditionalElements)
+
+// Pass elements to functions 
+
+function sum(a, b, c) {
+    return a + b + c;
+}
+
+const numbers = [1, 2, 3]
+const result = sum(...numbers);
+
+console.log(result)
+
+// Arrays bidimensionales 
+
+
+let array1D = [1, 2, 3] // Unidimensional 
+let array2D = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] //Bidimensional 
+
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+//Filas hacia abajo y columnas hacia el lado derecho 
+//Iniciando desde 0  
+
+matrix[1][2] = 10;
+
+console.log(matrix)
+
+let value = matrix[0][1]
+
+console.log(value)
+
+// Operations 
+
+for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+        console.log(matrix[i][j])
+    }   
+}
+
+
+function findElement(matrix, element) {
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] === element) {
+                return true 
+            }
+        }   
+    }
+    return false 
+}
+console.log(findElement(matrix, 20))
+
+
+// Duplica el array una copia exacta. 
+
+function duplicateMatrix (matrix) {
+    let newMatrix = []
+    for (let i = 0; i < matrix.length; i++) {
+        newMatrix[i] = [...matrix[i]]
+    }
+
+    return newMatrix
+}
+
+console.log(duplicateMatrix(matrix)) */
+
