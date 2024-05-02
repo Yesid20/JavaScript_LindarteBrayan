@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partida De Juego</title>
+    <link rel="stylesheet" href="../css/partida.css">
 </head>
 <body>
+    <div class="instrucciones">
+        <h1>Instrucciones del juego</h1>
+        <p>1.Jugaras a poner las cartas en el orden en el que te las entregue</p>
+        <p>2.Debes arrastar la carta a la posición que crees es la correcta.</p>
+        <p>3.Solo se verificara si la posición esta correcta cuando le des verificar.</p>
+        <p>6.Reta la retentiva de tu cerebro. </p>
+        <button onclick="empezarJuego()">A jugar!</button>
+    </div>
     <div class="mesa">
         <img src="../storage/img/mesa.jpg">
     </div>
+
+    <h3>Cartas Entregadas:</h3>
+    <div id="cartas" class="cartas"></div>
+
+    <div class="espacios-vacios">
+        <div class="espacio-vacio"></div>
+        <div class="espacio-vacio"></div>
+        <div class="espacio-vacio"></div>
+        <div class="espacio-vacio"></div>
+        <div class="espacio-vacio"></div>
+    </div>
+    <button id="verificarBtn" style="display: none;" onclick="verificarPosiciones()">Verificar</button>
+
 </body>
+    <script src="../js/partida.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
 </html>

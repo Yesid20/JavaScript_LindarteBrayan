@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'CasinoShadow';
+    src: url('../storage/Font/CasinoShadow-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 50vi;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+h1, p {
+    font-family: 'CasinoShadow', sans-serif;
+    color: green;
+}
+
+.instrucciones {
+    display: block;
+}
+.mesa {
+    position: relative;
+    width: 40vi;
+    left: 10vi;
+    margin-bottom: 30px;
+}
+
+.cartas {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 300px;
+}
+
+.carta {
+    position: relative;
+    top: 10vi;
+    left: -22vi;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 80px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+button {
+    font-family: 'CasinoShadow', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
