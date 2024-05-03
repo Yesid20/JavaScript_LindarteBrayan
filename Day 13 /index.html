@@ -18,48 +18,67 @@
                 <div class="card-header">Mis Heroes</div>
                 <div class="card-body">
                   <h5 class="card-title">Gestion de Heroes</h5>
-            <form>
-              <div class="row g-3">
-                <div class="col">
-                  <label for="inputEmail4" class="form-label">Nombre Personaje</label>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="col">
-                  <label for="inputEmail4" class="form-label">Nombre Actor</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div>
-              <div class="row g-3">
-                <div class="col">
-                  <label for="inputEmail4" class="form-label">Edad Actor</label>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="col">
-                  <label for="inputEmail4" class="form-label">Ubicacion</label>
-                  <input type="text" class="form-control">
-                  <div id="emailHelp" class="form-text">Nombre de la ciudad de origen.</div>
-                </div>
-                <div class="row g-3">
-                  <div class="col">
-                    <label for="inputEmail4" class="form-label">Poster</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  <div class="col">
-                    <label for="exampleInputPassword1" class="form-label">Ubicacion</label>
-                      <input type="date" class="form-control" id="fecha">
+                  <form id="hero-form">
+                    <div class="row g-3">
+                      <div class="col">
+                        <label for="nombrePersonaje" class="form-label">Nombre del Personaje</label>
+                        <input type="text" class="form-control" id="nombrePersonaje" required>
+                      </div>
+                      <div class="col">
+                        <label for="nombreActor" class="form-label">Nombre del Actor</label>
+                        <input type="text" class="form-control" id="nombreActor" required>
+                      </div>
                     </div>
-                  </div>
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Marvel</option>
-                    <option value="1">Dc</option>
-                    <option value="2">Dago Garcia</option>
-                    <option value="3">Three</option>
-                  </select>
-                <button type="submit" class="btn btn-dark">Nuevo Heroe</button>
-                <button type="submit" class="btn btn-primary">Guardar Heroe</button>
-                <button type="submit" class="btn btn-danger">Cancelar</button>
-        
-              </form>
+                    <div class="row g-3">
+                      <div class="col">
+                        <label for="edadActor" class="form-label">Edad del Actor</label>
+                        <input type="number" class="form-control" id="edadActor" required>
+                      </div>
+                      <div class="col">
+                        <label for="ubicacion" class="form-label">Ubicación</label>
+                        <input type="text" class="form-control" id="ubicacion" required>
+                        <div id="ubicacionHelp" class="form-text">Nombre de la ciudad de origen.</div>
+                      </div>
+                    </div>
+                    <div class="row g-3">
+                      <div class="col">
+                        <label for="poster" class="form-label">Póster</label>
+                        <input type="text" class="form-control" id="poster" required>
+                      </div>
+                      <div class="col">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" required>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="productora" class="form-label">Productora</label>
+                      <select class="form-select" id="productora" aria-label="Default select example" required>
+                        <option selected>Marvel</option>
+                        <option value="DC">DC</option>
+                        <option value="Dago Garcia">Dago Garcia</option>
+                        <option value="Three">Three</option>
+                      </select>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        Registro de Trajes
+                      </div>
+                      <div class="card-body">
+                        <h5 class="text-primary">Trajes del personaje</h5>
+                        <p class="text-primary">En esta seccion podra registrar los nombres de los trajes usados por el actor en cada una de la pelicula.</p>
+                        <button type="button" class="btn btn-warning circle-btn">+</button>
+                        <br><br>
+                        <div class="mb-3">
+                          <label for="formGroupExampleInput" class="form-label">Nombre del traje</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput">
+                          <button type="button" class="btn btn-danger">-</button>
+                        </div>
+                      </div>
+                    <button type="submit" class="btn btn-dark">Nuevo Heroe</button>
+                    <button type="submit" class="btn btn-primary">Guardar Heroe</button>
+                    <button type="submit" class="btn btn-danger">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                  </form>
             </div>
         </div>
           </div>
