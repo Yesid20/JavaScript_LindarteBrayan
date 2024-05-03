@@ -42,17 +42,17 @@ function handleFormSubmit(event) {
     showHeroes();
 }
 
-// Función para limpiar el formulario después de enviar
+//Limpiar el formulario después de enviar
 function clearForm() {
     document.getElementById('hero-form').reset();
 }
 
-// Función para guardar la lista de héroes en el almacenamiento local
+// Guardar la lista de héroes en el almacenamiento local
 function saveHeroes() {
     localStorage.setItem('heroes', JSON.stringify(heroes));
 }
 
-// Función para obtener la lista de héroes del almacenamiento local
+// Lista de héroes del almacenamiento local
 function getHeroes() {
     const storedHeroes = localStorage.getItem('heroes');
     if (storedHeroes) {
@@ -74,18 +74,3 @@ function showHeroes() {
     });
 }
 
-// Funciones para los botones dentro del formulario
-function guardarHeroe(event) {
-    event.preventDefault();
-    // Lógica para guardar el héroe
-}
-
-function cancelar(event) {
-    event.preventDefault();
-    // Lógica para cancelar
-}
-
-function eliminar(event) {
-    event.preventDefault();
-    // Lógica para eliminar
-}
