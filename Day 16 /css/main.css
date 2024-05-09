@@ -1,0 +1,69 @@
+#user-image {
+    border-radius: 50%;
+    width: 100px;
+}
+
+.card {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 50px;
+    min-height: 400px; 
+}
+.card-img-top {
+    border: none; 
+}
+.card-text {
+    margin-top: 50px; 
+}
+.card-text strong {
+    font-weight: bold;
+  }
+  
+#user-icon {
+    width: 70px;
+    margin-top: 150px;
+    position: absolute;
+    left: 100px;
+}
+
+#carta-icon {
+    width: 70px;
+    margin-top: 150px;
+    position: absolute;
+    left: 230px;
+}
+
+#calendario-icon {
+    width: 70px;
+    margin-top: 150px;
+    position: absolute;
+    left: 360px;
+}
+
+#mapa-icon {
+    width: 70px;
+    margin-top: 150px;
+    position: absolute;
+    left: 490px;
+}
+
+#phone-icon {
+    width: 70px;
+    margin-top: 150px;
+    position: absolute;
+    left: 620px;
+}
+
+#candado-icon {
+    width: 70px;
+    margin-top: 150px;
+    position: absolute;
+    left: 750px;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
+
