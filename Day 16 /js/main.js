@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         icons.forEach((icon, index) => {
             icon.addEventListener('mouseover', () => {
-                icon.classList.add('green-icon');
+                icon.classList.add('green-icon'); 
                 texts[index].classList.remove('hidden');
                 texts[index].classList.add('visible');
             });
