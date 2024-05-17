@@ -80,7 +80,6 @@ async function mostrarCartas() {
     new Sortable(document.querySelector('#cartas'), {
         animation: 150,
         onEnd: function (evt) {
-            // Aquí puedes añadir la lógica para verificar si las cartas están en el orden correcto
         }
     });
 }
